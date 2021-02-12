@@ -4,30 +4,41 @@ public class Student{
    String favoriteSubject;
    String name;
    String favoriteColor;
-   String language;
+   String languageTaken;
    String hometown;
    boolean atThacher;
    
-   public Student(double g, int a, String s, String c, String n, String l, String h){
+   public Student(double g, int a, String s, String c, String n, String l, String h, boolean t){
       GPA = g;
       age = a;
       favoriteSubject = s;
       favoriteColor = c;
       name = n;
-      language = l;
+      languageTaken = l;
       hometown = h;
-   }
-   
-   public void setAge(int newAge){
-      age = newAge;
+      atThacher = t;
    }
    public void changeGrade(double newGPA){
       GPA = newGPA;
    }
+   public void setAge(int newAge){
+      age = newAge;
+   }
+   public void changeFavoriteSubject(String newSub){
+      favoriteSubject = newSub;
+   }
    public void rename(String newName){
       name = newName;
    }
-   
+   public void changeFavoriteColor(String newColor){
+      favoriteColor = newColor;
+   }
+   public void takeLanguage(String newLang){
+      languageTaken = newLang;
+   }
+   public void changeHometown(String newCity){
+      hometown = newCity;
+   }
    public void moveToThacher(){
       atThacher = true;
    }
@@ -35,7 +46,4 @@ public class Student{
       atThacher = false;
    }
    
-   public void wash(){
-      clean = true;
-   }
 }
