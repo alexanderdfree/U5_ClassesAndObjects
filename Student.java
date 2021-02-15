@@ -1,49 +1,39 @@
 public class Student{
    double GPA;
    int age;
-   String favoriteSubject;
-   String name;
-   String favoriteColor;
-   String languageTaken;
-   String hometown;
-   boolean atThacher;
+   int heightInch;
+   int grade;
+   String sport;
+   boolean tired;
+
    
-   public Student(double g, int a, String s, String c, String n, String l, String h, boolean t){
+   public Student(double g, int a, int h, int r, String s, boolean t){
       GPA = g;
       age = a;
-      favoriteSubject = s;
-      favoriteColor = c;
-      name = n;
-      languageTaken = l;
-      hometown = h;
-      atThacher = t;
+      heightInch = h;
+      grade = r;
+      sport = s;
+      tired = t;
    }
-   public void changeGrade(double newGPA){
-      GPA = newGPA;
+   public void changeSportSeason(String newSport){
+      sport = newSport;
    }
-   public void setAge(int newAge){
-      age = newAge;
+   public void ageYears(int years){
+      age += years;
    }
-   public void changeFavoriteSubject(String newSub){
-      favoriteSubject = newSub;
+   public void growAmount(int inches){
+      heightInch += inches;
    }
-   public void rename(String newName){
-      name = newName;
+   public void drinkCoffee(){
+      tired = false;
+      heightInch--;
    }
-   public void changeFavoriteColor(String newColor){
-      favoriteColor = newColor;
+   public void sick(){
+      GPA -= 0.5;
+      tired = true;
    }
-   public void takeLanguage(String newLang){
-      languageTaken = newLang;
-   }
-   public void changeHometown(String newCity){
-      hometown = newCity;
-   }
-   public void moveToThacher(){
-      atThacher = true;
-   }
-   public void leaveThacher(){
-      atThacher = false;
+   public void sleep(){
+      tired = false;
    }
    
 }
