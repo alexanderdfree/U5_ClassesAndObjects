@@ -74,5 +74,79 @@ public boolean equals(Complex that){
    double image = this.im;
    return new Complex(real, image);
    }
-
+   public Complex add(Complex that){
+      /*Add together this and that
+      Input:
+         this: a Complex number
+         that: another Complex number
+      Output:
+         return: a new Complex representing this + that
+      Side Effects: none
+      Ex.
+      Complex c1 = new Complex(1.0, 2.0)
+      Complex c2 = new Complex(2.0, -1.0)
+      Complex c3 = c1.add(c2)
+      c3.toString() -> "3.0 + 1.0i"
+      */
+      //your code goes here
+      double real = this.re;
+      double image = this.im;
+      double real1 = that.re;
+      double image1 = that.im;
+      return new Complex(real + real1, image + image1);
+   }
+   public Complex times(double scalar){
+      /*Multiply this times a scalar value
+      Input:
+         this: a Complex number
+         double scalar: a scalar value
+      Output:
+         return: a Complex number representing this * scalar
+      Side Effects: none
+      Ex.
+      Complex c1 = new Complex(1.0, -2.0)
+      Complex c2 = c1.times(4.0)
+      c2.toString() -> 4.0 - 8.0i
+      */
+      //your code goes here
+      double real = this.re;
+      double image = this.im;
+      return new Complex(real * scalar, image * scalar);
+   
+   }
+   public Complex times(Complex that){
+      /*Multiply this times that
+      Input:
+         this: a Complex number
+         that: another Complex number
+      Output:
+         return: a new Complex representing this * that
+      Side Effects: none
+      Ex.
+      Complex c1 = new Complex(1.0, 2.0)
+      Complex c2 = new Complex(2.0, -1.0)
+      Complex c3 = c1.times(c2)
+      c3.toString() -> 4.0 + 3.0i
+      */
+      //your code goes here
+   double product1 = this.re * that.re;
+   double product2 = this.re * that.im;
+   double product3 = this.im * that.re;
+   double product4 = -1.0 * this.im * that.im;
+   return new Complex(product1 + product4, product2 + product3);
+   }
+   public double abs(){
+      /*Return the absolute value of this Complex number
+      Input:
+         this: a Complex number
+      Output:
+         return: the absolute value of this Complex number
+      Side Effects: none
+      Ex.
+      Complex c1 = new Complex(3.0, -4.0)
+      c1.abs() -> 5.0
+      */
+      //your code goes here
+   return Math.sqrt(Math.pow(this.re, 2) + Math.pow(this.im, 2));
+   }
 }
