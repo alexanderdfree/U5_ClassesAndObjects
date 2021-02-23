@@ -110,6 +110,25 @@ public class Polar{
       //your code goes here
       return new Cartesian(this.r * Math.cos(theta), this.r * Math.sin(theta));
    }
+   public void draw(double radius){
+      /*Draw this Polar as a point on StdDraw
+      Input:
+         this: a Polar coordinate
+         double radius: the radius of the circle to draw
+      Output:
+         StdDraw: draw a circle with radius at the coordinates 
+                  of this
+      Side Effects: none
+      Ex.
+      Polar p = new Polar(1.0, Math.PI/2)
+      p.draw(0.01) -> draws a circle w/ radius = 0.01 at (0, 1)
+      */
+      //your code goes here
+      //Cartesian Cartesian1 = this.toCartesian();
+      //StdDraw.filledCircle(this.toCartesian().x, this.toCartesian().y, radius);
+      StdDraw.filledCircle(this.toCartesian().x, this.toCartesian().y, radius);
+   }
+
 
 
 

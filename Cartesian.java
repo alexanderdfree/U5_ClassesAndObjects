@@ -97,6 +97,22 @@ public class Cartesian{
       return new Polar(Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2)), Math.atan2(this.y, this.x));
       
    }
+   public void draw(double radius){
+      /*Draw this Cartesian as a point on StdDraw
+      Input:
+         this: a Cartesian coordinate
+         double radius: the radius of the circle to draw
+      Output:
+         StdDraw: draw a circle with radius at the coordinates
+                  of this Cartesian
+      Side Effects: none
+      Ex.
+      Cartesian c = new Cartesian(1.0, 1.0)
+      c.draw(0.01) -> draws a circle w/ radius = 0.01 at (1, 1)
+      */
+      StdDraw.filledCircle(this.x, this.y, radius);
+   }
+
 
 
 
