@@ -62,7 +62,26 @@ public class Cartesian{
       c1.equals(c3) -> false
       */
       //your code goes here
+      if (this.x == that.x && this.y == that.y) return true;
+      return false;
    }
+   public Cartesian clone(){
+      /*Create a cloned copy of this Cartesian object
+      Input:
+         this: a Cartesian object
+      Output:
+         return: a cloned copy of this
+      Ex.
+      Cartesian c1 = new Cartesian(1.0, 2.0)
+      Cartesian c2 = c1.clone()
+      c1 == c2 -> false
+      c1.equals(c2) -> true
+      c2.equals(c1) -> true
+      */
+      //your code goes here
+      return new Cartesian(this.x, this.y);
+   }
+
 
 
 }
