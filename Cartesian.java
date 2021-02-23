@@ -81,6 +81,23 @@ public class Cartesian{
       //your code goes here
       return new Cartesian(this.x, this.y);
    }
+   public Polar toPolar(){
+      /*Convert from Cartesian coordinates to polar coordinates
+      Input:
+         this: a Cartesian coordinate
+      Output:
+         return: the equivalent point in polar coordinates
+      Side Effects: none
+      Ex.
+      Cartesian c = new Cartesian(-1.0, 0.0)
+      Polar p = c.toPolar()
+      p.toString() -> (r = 1.0, θ = 3.141592653589)
+      */
+      //your code goes here
+      return new Polar(Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2)), Math.atan2(this.y, this.x));
+      
+   }
+
 
 
 
