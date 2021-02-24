@@ -11,7 +11,7 @@ public class PolarCurves{
          return: the radius for given theta
       */
       
-      return 0.15*theta; //change this line to change the polar curve
+      return 8*Math.cos(5*theta); //change this line to change the polar curve
    }
    
    public static void main(String[] args){
