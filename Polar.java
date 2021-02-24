@@ -108,7 +108,7 @@ public class Polar{
       c.toString() -> (x = 0.7071067811865, y = 0.7071067811865)
       */
       //your code goes here
-      return new Cartesian(this.r * Math.cos(theta), this.r * Math.sin(theta));
+      return new Cartesian(this.r * Math.cos(this.theta), this.r * Math.sin(this.theta));
    }
    public void draw(double radius){
       /*Draw this Polar as a point on StdDraw
@@ -126,7 +126,7 @@ public class Polar{
       //your code goes here
       //Cartesian Cartesian1 = this.toCartesian();
       //StdDraw.filledCircle(this.toCartesian().x, this.toCartesian().y, radius);
-      StdDraw.filledCircle(this.toCartesian().x, this.toCartesian().y, radius);
+      StdDraw.filledCircle(this.r * Math.cos(this.theta), this.r * Math.sin(this.theta), radius);
    }
 
 
