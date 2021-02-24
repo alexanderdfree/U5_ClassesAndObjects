@@ -124,9 +124,11 @@ public class Polar{
       p.draw(0.01) -> draws a circle w/ radius = 0.01 at (0, 1)
       */
       //your code goes here
-      //Cartesian Cartesian1 = this.toCartesian();
-      //StdDraw.filledCircle(this.toCartesian().x, this.toCartesian().y, radius);
-      StdDraw.filledCircle(this.r * Math.cos(this.theta), this.r * Math.sin(this.theta), radius);
+      Cartesian cartesian1 = this.toCartesian();
+      double x = cartesian1.getX();
+      double y = cartesian1.getY();
+      StdDraw.filledCircle(x, y, radius);
+      //StdDraw.filledCircle(this.r * Math.cos(this.theta), this.r * Math.sin(this.theta), radius);
    }
 
 

@@ -23,7 +23,7 @@ public class PolarCurves{
       double axisScale = 5.0;       //change this number to zoom in or out
       double minTheta = 0.01;        //change this number to change the range of theta
       double maxTheta = Math.PI*25;  //change this number to change the range of theta
-      int nPoints = 2000;           //change this number to increase the resolution of the graph
+      int nPoints = 200000;           //change this number to increase the resolution of the graph
       double pointSize = 0.02;      //change this number to increase the size of points
       Color pointColor = Color.RED; //the color to draw points
       

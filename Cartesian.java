@@ -30,6 +30,20 @@ public class Cartesian{
       //your code goes here
       return this.y;
    }
+   public double getX(){
+      /*Accessor. Return the y coordinate of this Cartesian
+      Input:
+         this: a Cartesian object
+      Output:
+         return: the y coordinate of this Cartesian object
+      Side Effects: none
+      Ex.
+      Cartesian c = new Cartesian(1.0, 2.0)
+      c.getY() -> 2.0
+      */
+      //your code goes here
+      return this.x;
+   }
    public String toString(){
       /*Return a String representation of this Cartesian
       Input:
