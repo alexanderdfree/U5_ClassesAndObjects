@@ -27,7 +27,7 @@ public class TurtleShapes{
       TurtleShapes.drawPolygon(5, 1.0) -> draws a pentagon
       */ 
       Turtle t = new Turtle();
-      double newAngle = 180.0 - (360.0/n);
+      double newAngle = (Math.PI*2/n);
       for (int i = 0; i < n; i++){
          t.step(length);
          t.turn(newAngle);
@@ -55,7 +55,11 @@ public class TurtleShapes{
    
    }
    }
+   public static void alexShape(){
+      StdDraw.setScale(-10, 10);
+      TurtleShapes.drawSpiral(Math.PI/3, 0.9, 10, 100);
    
+   }
 
 
 }

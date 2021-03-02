@@ -77,7 +77,7 @@ public class Turtle{
       t.toString() -> (x = 0.0, y = 0.0, θ = 1.0)
       */
       //your code goes here
-      this.angle = turnAmount;
+      this.angle += turnAmount;
    }
    public void step(double length){
       /*Step the turtle forward by length
@@ -100,11 +100,13 @@ public class Turtle{
       t.toString() -> (x = 0.5, y = 0.5, θ = 1.5707963267948966)
       */
       
-      if (this.pen){
+         double saveX = this.x;
+         double saveY = this.y;
          this.x += Math.cos(angle) * length;
          this.y += Math.sin(angle) * length;
-      
-      }
+         if (this.pen){
+            StdDraw.line(saveX, saveY, this.x, this.y);
+         }
       
     }
     public void teleport(double x, double y){
