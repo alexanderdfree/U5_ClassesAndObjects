@@ -149,7 +149,7 @@ public boolean equals(Vector2D that){
       Vector2D div = vec.divide(2.0)
       div.toString() -> (0.5, 1.0)
       */
-      return new Vector2D(this.x / 2, this.y / 2);
+      return new Vector2D(this.x / scalar, this.y / scalar);
 }
    public double abs(){
       /*Return the absolute value or magnitude of this Vector2D
@@ -190,6 +190,6 @@ public boolean equals(Vector2D that){
       Vector2D vec2 = new Vector2D(1.0, 2.0)
       vec1.dot(vec2) -> 10.0
       */
-      return this.x*that.x + this.y/that.y;
+      return this.x*that.x + this.y*that.y;
 }
 }

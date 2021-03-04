@@ -162,6 +162,27 @@ public class TestVector2D{
       
       StdOut.println("---------------------------------");
    }
+   public static void testSubtract(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing subtract():                   ");
+      
+      Vector2D c1;
+      Vector2D c2;
+      Vector2D c3;
+      Vector2D c4;
+      
+      c1 = new Vector2D(1.0, 2.0);
+      c2 = new Vector2D(2.0, -1.0);
+      c3 = c1.subtract(c2);
+      c4 = c2.subtract(c1);
+      
+      Testing.testEquals("Test 14.1 (skipped 13 for luck)", c1.toString(), "(1.0, 2.0)");
+      Testing.testEquals("Test 14.2", c2.toString(), "(2.0, -1.0)");
+      Testing.testEquals("Test 14.3", c3.toString(), "(-1.0, 3.0)");
+      Testing.testEquals("Test 14.4", c4.toString(), "(1.0, -3.0)");
+      
+      StdOut.println("---------------------------------");
+   }
    
    public static void testScalarTimes(){
       StdOut.println("---------------------------------");
@@ -179,6 +200,71 @@ public class TestVector2D{
       c2 = c1.multiply(-2.5);
       Testing.testEquals("Test 6.3", c2.toString(), "(-2.5, 5.0)");
       Testing.testEquals("Test 6.4", c1.toString(), "(1.0, -2.0)");
+      
+      StdOut.println("---------------------------------");
+   }
+   public static void testDivide(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing divide:           ");
+      
+      Vector2D c1;
+      Vector2D c2;
+      
+      c1 = new Vector2D(1.0, -2.0);
+      c2 = c1.divide(4.0);
+      Testing.testEquals("Test 15.1", c2.toString(), "(0.25, -0.5)");
+      Testing.testEquals("Test 15.2", c1.toString(), "(1.0, -2.0)");
+      
+      c1 = new Vector2D(1.0, -2.0);
+      c2 = c1.divide(1.0);
+      Testing.testEquals("Test 15.3", c2.toString(), "(1.0, -2.0)");
+      Testing.testEquals("Test 15.4", c1.toString(), "(1.0, -2.0)");
+      
+      StdOut.println("---------------------------------");
+   }
+   public static void testUnit(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing unit:           ");
+      
+      Vector2D c1;
+      Vector2D c2;
+      
+      c1 = new Vector2D(3.0, 4.0);
+      c2 = c1.unit();
+      Testing.testEquals("Test 16.1", c2.toString(), "(0.6, 0.8)");
+      Testing.testEquals("Test 16.2", c1.toString(), "(3.0, 4.0)");
+      
+      c1 = new Vector2D(1.0, -2.0);
+      c2 = c1.unit();
+      Testing.testEquals("Test 16.3", c2.toString(), "(" + 1.0/Math.sqrt(5) + ", " + -2.0/Math.sqrt(5) + ")");
+      Testing.testEquals("Test 16.4", c1.toString(), "(1.0, -2.0)");
+      
+      StdOut.println("---------------------------------");
+   }
+   public static void testDot(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing dot:           ");
+      
+      Vector2D c1;
+      Vector2D c2;
+      double c3;
+      Vector2D c4;
+      Vector2D c5;
+      double c6;
+      
+      c1 = new Vector2D(3.0, 4.0);
+      c2 = new Vector2D(-2.0, 0.0);
+      c3 = c1.dot(c2);
+      Testing.testEquals("Test 17.1", c3, -6.0);
+      Testing.testEquals("Test 17.2", c1.toString(), "(3.0, 4.0)");
+      Testing.testEquals("Test 17.3", c2.toString(), "(-2.0, 0.0)");
+      
+      c4 = new Vector2D(0.0, 0.0);
+      c5 = new Vector2D(-9.0, -1.0);
+      c6 = c4.dot(c5);
+      Testing.testEquals("Test 17.4", c6, -0.0);
+      Testing.testEquals("Test 17.5", c4.toString(), "(0.0, 0.0)");
+      Testing.testEquals("Test 17.6", c5.toString(), "(-9.0, -1.0)");
       
       StdOut.println("---------------------------------");
    }
@@ -237,5 +323,9 @@ public class TestVector2D{
       testGetY();
       testSetX();
       testSetY();
+      testSubtract();
+      testDivide();
+      testUnit();
+      testDot();
    }
 }
