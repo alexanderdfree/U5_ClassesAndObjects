@@ -27,7 +27,80 @@ public class TestVector2D{
       
       StdOut.println("---------------------------------");
    }
+   public static void testGetX(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing getX():              ");
+      
+      Vector2D c;
    
+      c = new Vector2D(1.0, 2.0);
+      Testing.testEquals("Test 9.1", c.getX(), 1.0);
+      
+      c = new Vector2D(-1.0, 2.0);
+      Testing.testEquals("Test 9.2", c.getX(), -1.0);
+      
+      c = new Vector2D(1.0, -2.0);
+      Testing.testEquals("Test 9.3", c.getX(), 1.0);
+      
+      StdOut.println("---------------------------------");
+   }
+   public static void testGetY(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing getY():              ");
+      
+      Vector2D c;
+   
+      c = new Vector2D(1.0, 2.0);
+      Testing.testEquals("Test 10.1", c.getY(), 2.0);
+      
+      c = new Vector2D(-1.0, 2.0);
+      Testing.testEquals("Test 10.2", c.getY(), 2.0);
+      
+      c = new Vector2D(1.0, -2.0);
+      Testing.testEquals("Test 10.3", c.getY(), -2.0);
+      
+      StdOut.println("---------------------------------");
+   }
+   public static void testSetX(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing setX():              ");
+      
+      Vector2D c;
+   
+      c = new Vector2D(1.0, 2.0);
+      c.setX(-1.0);
+      Testing.testEquals("Test 11.1", c.getX(), -1.0);
+      
+      c = new Vector2D(-1.0, 2.0);
+      c.setX(0);
+      Testing.testEquals("Test 11.2", c.getX(), 0.0);
+      
+      c = new Vector2D(1.0, -2.0);
+      c.setX(1.0);
+      Testing.testEquals("Test 11.3", c.getX(), 1.0);
+      
+      StdOut.println("---------------------------------");
+   }
+   public static void testSetY(){
+      StdOut.println("---------------------------------");
+      StdOut.println("Testing setY():              ");
+      
+      Vector2D c;
+   
+      c = new Vector2D(1.0, 2.0);
+      c.setY(-1.0);
+      Testing.testEquals("Test 12.1", c.getY(), -1.0);
+      
+      c = new Vector2D(-1.0, 2.0);
+      c.setY(0);
+      Testing.testEquals("Test 12.2", c.getY(), 0.0);
+      
+      c = new Vector2D(1.0, -2.0);
+      c.setY(1.0);
+      Testing.testEquals("Test 12.3", c.getY(), 1.0);
+      
+      StdOut.println("---------------------------------");
+   }
    public static void testEquals(){
       StdOut.println("---------------------------------");
       StdOut.println("Testing equals():                ");
@@ -58,7 +131,7 @@ public class TestVector2D{
       
       c1 = new Vector2D(2.0, -3.0);
       c2 = c1.clone();
-      Testing.testEquals("Test 4.1", c1.toString(), "(2.0, 3.0)");
+      Testing.testEquals("Test 4.1", c1.toString(), "(2.0, -3.0)");
       Testing.testEquals("Test 4.2", c2.toString(), "(2.0, -3.0)");
       Testing.testEquals("Test 4.3", c1 == c2, false);
       Testing.testEquals("Test 4.4", c1.x == c2.x, true);
@@ -82,10 +155,10 @@ public class TestVector2D{
       c3 = c1.add(c2);
       c4 = c2.add(c1);
       
-      Testing.testEquals("Test 5.1", c1.toString(), "(1.0 + 2.0)");
-      Testing.testEquals("Test 5.2", c2.toString(), "(2.0 - 1.0)");
-      Testing.testEquals("Test 5.3", c3.toString(), "(3.0 + 1.0)");
-      Testing.testEquals("Test 5.4", c4.toString(), "(3.0 + 1.0)");
+      Testing.testEquals("Test 5.1", c1.toString(), "(1.0, 2.0)");
+      Testing.testEquals("Test 5.2", c2.toString(), "(2.0, -1.0)");
+      Testing.testEquals("Test 5.3", c3.toString(), "(3.0, 1.0)");
+      Testing.testEquals("Test 5.4", c4.toString(), "(3.0, 1.0)");
       
       StdOut.println("---------------------------------");
    }
@@ -99,13 +172,13 @@ public class TestVector2D{
       
       c1 = new Vector2D(1.0, -2.0);
       c2 = c1.multiply(4.0);
-      Testing.testEquals("Test 6.1", c2.toString(), "(4.0 - 8.0)");
-      Testing.testEquals("Test 6.2", c1.toString(), "(1.0 - 2.0)");
+      Testing.testEquals("Test 6.1", c2.toString(), "(4.0, -8.0)");
+      Testing.testEquals("Test 6.2", c1.toString(), "(1.0, -2.0)");
       
       c1 = new Vector2D(1.0, -2.0);
       c2 = c1.multiply(-2.5);
-      Testing.testEquals("Test 6.3", c2.toString(), "(2.5 + 5.0)");
-      Testing.testEquals("Test 6.4", c1.toString(), "(1.0 - 2.0)");
+      Testing.testEquals("Test 6.3", c2.toString(), "(-2.5, 5.0)");
+      Testing.testEquals("Test 6.4", c1.toString(), "(1.0, -2.0)");
       
       StdOut.println("---------------------------------");
    }
@@ -160,5 +233,9 @@ public class TestVector2D{
       testScalarTimes();
       //testComplexTimes();
       testAbs();
+      testGetX();
+      testGetY();
+      testSetX();
+      testSetY();
    }
 }

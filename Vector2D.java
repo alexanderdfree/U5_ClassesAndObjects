@@ -3,7 +3,7 @@ public class Vector2D{
    double y; //the y component
   
    public Vector2D(double x, double y){
-      this.x = y;
+      this.x = x;
       this.y = y;
   }
 public String toString(){
@@ -135,7 +135,7 @@ public boolean equals(Vector2D that){
       Vector2D times = vec.multiply(2.0)
       times.toString() -> (2.0, 4.0)
       */
-      return new Vector2D(this.x * 2, this.y * 2);
+      return new Vector2D(this.x * scalar, this.y * scalar);
 }
    public Vector2D divide(double scalar){
       /*Divide this Vector2D by a scalar
